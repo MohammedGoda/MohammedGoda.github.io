@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>YallaGoda</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@300&display=swap" rel="stylesheet">
+  <style>
+    * {
+      /*background-color: #9e9e9e;*/
+      font-size: 25pt;
+      color: #f8f1cf;
+    }
+    body {
+      background-image: url('assets/qatar-2022.jpg');
+      background-size: contain;
+      padding-right: 45px;
+      padding-left: 65px;
+    }
+    #myHeader {
+      font-size: 28pt;
+      position: fixed;
+      width: 85%;
+      display: flex;
+      border-radius: 5px;
+      color: #ffd55b;
+      font-weight: bolder;
+    }
+    #tables {
+      padding: 50px 0px 0px 0px;
+    }
+    .groups {
+      /*font-family: Trebuchet, Helvetica, sans-serif;*/
+      font-family: 'Noto Kufi Arabic', sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+      text-align:center;
+    }
+    .groups td, .groups th {
+      border: 1px solid #86373700;
+      padding: 8px;
+    }
+    /*.groups tr:nth-child(even){background-color: #f2f2f2;}*/
+    /*.groups tr:hover {background-color: rgb(239, 70, 70);}*/
+    .groups th {
+      padding-top: 4px;
+      padding-bottom: 4px;
+      text-align:center;
+      background-color: #370217;
+    }
+    h4 {
+      font-size: 35pt;
+      font-weight: bolder;
+      padding-top: 30px;
+    }
+    .w3-button {
+      background-color: #370217;
+    }
+    .w3-button.selected {
+      background-color: #c12b00;
+    }
+    .score {
+      font-size: 20pt;
+      position: relative;
+      top: 15px;
+      left: 5px;
+      color: #ffd55b;
+    }
+    tr.playerSelection {
+      background-color: #c12b008c;
+    }
+    </style>
+</head>
+<body>
+<script>
+
+
+
+
+</script>
+  <div id="myHeader" class="w3-bar" style="background-color: #4d0922;">
+    <button id="goda" class="w3-button w3-block" onclick="selectTab(event,'goda')"><span class="score">16/8</span> جودة</button>
+    <button id="kim" class="w3-button w3-block" onclick="selectTab(event,'kim')"><span class="score">16/8</span> كريم</button>
+    <button id="amro" class="w3-button w3-block" onclick="selectTab(event,'amro')"><span class="score">16/8</span> عمرو</button>
+  </div>
+
+  <div id="tables">
+
+  <table class="groups">
+    <h4>المجموعة A</h4>
+    <tr>
+      <th>المركز</th>
+      <th>الفريق</th>
+      <th>لعب</th>
+      <th>فرق أهداف</th>
+      <th>النقاط</th>
+    </tr>
+    <tr>
+      <td class="المركز">1</td>
+      <td class="الفريق">هولندا</td>
+      <td class="لعب">1</td>
+      <td class="فرق أهداف">2</td>
+      <td class="النقاط">3</td>
+    </tr>
+    <tr>
+      <td class="المركز">2</td>
+      <td class="الفريق">الإكوادور</td>
+      <td class="لعب">1</td>
+      <td class="فرق أهداف">2</td>
+      <td class="النقاط">3</td>
+    </tr>
+    <tr>
+      <td class="المركز">3</td>
+      <td class="الفريق">السنغال</td>
+      <td class="لعب">1</td>
+      <td class="فرق أهداف">-2</td>
+      <td class="النقاط">0</td>
+    </tr>
+    <tr>
+      <td class="المركز">4</td>
+      <td class="الفريق">قطر</td>
+      <td class="لعب">1</td>
+      <td class="فرق أهداف">-2</td>
+      <td class="النقاط">0</td>
+    </tr>
+  </table>
+  <table class="groups">
+    <h4>المجموعة B</h4>
+    <tr>
+      <th>المركز</th>
+      <th>الفريق</th>
+      <th>لعب</th>
+      <th>فرق أهداف</th>
+      <th>النقاط</th>
+    </tr>
+    <tr>
+      <td class="المركز">1</td>
+      <td class="الفريق">إنجلترا</td>
+      <td class="لعب">1</td>
+      <td class="فرق أهداف">2</td>
+      <td class="النقاط">3</td>
+    </tr>
+    <tr>
+      <td class="المركز">2</td>
+      <td class="الفريق">إيران</td>
+      <td class="لعب">1</td>
+      <td class="فرق أهداف">2</td>
+      <td class="النقاط">3</td>
+    </tr>
+    <tr>
+      <td class="المركز">3</td>
+      <td class="الفريق">أمريكا</td>
+      <td class="لعب">1</td>
+      <td class="فرق أهداف">-2</td>
+      <td class="النقاط">0</td>
+    </tr>
+    <tr>
+      <td class="المركز">4</td>
+      <td class="الفريق">ويلز</td>
+      <td class="لعب">1</td>
+      <td class="فرق أهداف">-2</td>
+      <td class="النقاط">0</td>
+    </tr>
+  </table>
+  <table class="groups">
+    <h4>المجموعة C</h4>
+    <tr>
+      <th>المركز</th>
+      <th>الفريق</th>
+      <th>لعب</th>
+      <th>فرق أهداف</th>
+      <th>النقاط</th>
+    </tr>
+    <tr>
+      <td class="المركز">1</td>
+      <td class="الفريق">بولندا</td>
+      <td class="لعب">1</td>
+      <td class="فرق أهداف">2</td>
+      <td class="النقاط">3</td>
+    </tr>
+    <tr>
+      <td class="المركز">2</td>
+      <td class="الفريق">الأرجنتين</td>
+      <td class="لعب">1</td>
+      <td class="فرق أهداف">2</td>
+      <td class="النقاط">3</td>
+    </tr>
+    <tr>
+      <td class="المركز">3</td>
+      <td class="الفريق">السعودية</td>
+      <td class="لعب">1</td>
+      <td class="فرق أهداف">-2</td>
+      <td class="النقاط">0</td>
+    </tr>
+    <tr>
+      <td class="المركز">4</td>
+      <td class="الفريق">المكسيك</td>
+      <td class="لعب">1</td>
+      <td class="فرق أهداف">-2</td>
+      <td class="النقاط">0</td>
+    </tr>
+  </table>
+
+  <table class="groups">
+    <h4>المجموعة D</h4>
+    <tr>
+      <th>المركز</th>
+      <th>الفريق</th>
+      <th>لعب</th>
+      <th>فرق أهداف</th>
+      <th>النقاط</th>
+    </tr>
+    <tr>
+      <td class="المركز">1</td>
+      <td class="الفريق">فرنسا</td>
+      <td class="لعب">1</td>
+      <td class="فرق أهداف">2</td>
+      <td class="النقاط">3</td>
+    </tr>
+    <tr>
+      <td class="المركز">2</td>
+      <td class="الفريق">أستراليا</td>
+      <td class="لعب">1</td>
+      <td class="فرق أهداف">2</td>
+      <td class="النقاط">3</td>
+    </tr>
+    <tr>
+      <td class="المركز">3</td>
+      <td class="الفريق">الدنمارك</td>
+      <td class="لعب">1</td>
+      <td class="فرق أهداف">-2</td>
+      <td class="النقاط">0</td>
+    </tr>
+    <tr>
+      <td class="المركز">4</td>
+      <td class="الفريق">تونس</td>
+      <td class="لعب">1</td>
+      <td class="فرق أهداف">-2</td>
+      <td class="النقاط">0</td>
+    </tr>
+  </table>
+  <table class="groups">
+    <h4>المجموعة E</h4>
+    <tr>
+      <th>المركز</th>
+      <th>الفريق</th>
+      <th>لعب</th>
+      <th>فرق أهداف</th>
+      <th>النقاط</th>
+    </tr>
+    <tr>
+      <td class="المركز">1</td>
+      <td class="الفريق">إسبانيا</td>
+      <td class="لعب">1</td>
+      <td class="فرق أهداف">2</td>
+      <td class="النقاط">3</td>
+    </tr>
+    <tr>
+      <td class="المركز">2</td>
+      <td class="الفريق">اليــــابان</td>
+      <td class="لعب">1</td>
+      <td class="فرق أهداف">2</td>
+      <td class="النقاط">3</td>
+    </tr>
+    <tr>
+      <td class="المركز">3</td>
+      <td class="الفريق">ألمانيا</td>
+      <td class="لعب">1</td>
+      <td class="فرق أهداف">-2</td>
+      <td class="النقاط">0</td>
+    </tr>
+    <tr>
+      <td class="المركز">4</td>
+      <td class="الفريق">كوستاريكا</td>
+      <td class="لعب">1</td>
+      <td class="فرق أهداف">-2</td>
+      <td class="النقاط">0</td>
+    </tr>
+  </table>
+  <table class="groups">
+    <h4>المجموعة F</h4>
+    <tr>
+      <th>المركز</th>
+      <th>الفريق</th>
+      <th>لعب</th>
+      <th>فرق أهداف</th>
+      <th>النقاط</th>
+    </tr>
+    <tr>
+      <td class="المركز">1</td>
+      <td class="الفريق">بلجيكا</td>
+      <td class="لعب">1</td>
+      <td class="فرق أهداف">2</td>
+      <td class="النقاط">3</td>
+    </tr>
+    <tr>
+      <td class="المركز">2</td>
+      <td class="الفريق">المغرب</td>
+      <td class="لعب">1</td>
+      <td class="فرق أهداف">2</td>
+      <td class="النقاط">3</td>
+    </tr>
+    <tr>
+      <td class="المركز">3</td>
+      <td class="الفريق">كرواتيا</td>
+      <td class="لعب">1</td>
+      <td class="فرق أهداف">-2</td>
+      <td class="النقاط">0</td>
+    </tr>
+    <tr>
+      <td class="المركز">4</td>
+      <td class="الفريق">كندا</td>
+      <td class="لعب">1</td>
+      <td class="فرق أهداف">-2</td>
+      <td class="النقاط">0</td>
+    </tr>
+  </table>
+  <table class="groups">
+    <h4>المجموعة G</h4>
+    <tr>
+      <th>المركز</th>
+      <th>الفريق</th>
+      <th>لعب</th>
+      <th>فرق أهداف</th>
+      <th>النقاط</th>
+    </tr>
+    <tr>
+      <td class="المركز">1</td>
+      <td class="الفريق">البرازيل</td>
+      <td class="لعب">1</td>
+      <td class="فرق أهداف">2</td>
+      <td class="النقاط">3</td>
+    </tr>
+    <tr>
+      <td class="المركز">2</td>
+      <td class="الفريق">سويسرا</td>
+      <td class="لعب">1</td>
+      <td class="فرق أهداف">2</td>
+      <td class="النقاط">3</td>
+    </tr>
+    <tr>
+      <td class="المركز">3</td>
+      <td class="الفريق">الكاميرون</td>
+      <td class="لعب">1</td>
+      <td class="فرق أهداف">-2</td>
+      <td class="النقاط">0</td>
+    </tr>
+    <tr>
+      <td class="المركز">4</td>
+      <td class="الفريق">صربيا</td>
+      <td class="لعب">1</td>
+      <td class="فرق أهداف">-2</td>
+      <td class="النقاط">0</td>
+    </tr>
+  </table>
+  <table class="groups">
+    <h4>المجموعة H</h4>
+    <tr>
+      <th>المركز</th>
+      <th>الفريق</th>
+      <th>لعب</th>
+      <th>فرق أهداف</th>
+      <th>النقاط</th>
+    </tr>
+    <tr>
+      <td class="المركز">1</td>
+      <td class="الفريق">البرتغال</td>
+      <td class="لعب">1</td>
+      <td class="فرق أهداف">2</td>
+      <td class="النقاط">3</td>
+    </tr>
+    <tr>
+      <td class="المركز">2</td>
+      <td class="الفريق">كوريا الجنوبية</td>
+      <td class="لعب">1</td>
+      <td class="فرق أهداف">2</td>
+      <td class="النقاط">3</td>
+    </tr>
+    <tr>
+      <td class="المركز">3</td>
+      <td class="الفريق">أوروجواي</td>
+      <td class="لعب">1</td>
+      <td class="فرق أهداف">-2</td>
+      <td class="النقاط">0</td>
+    </tr>
+    <tr>
+      <td class="المركز">4</td>
+      <td class="الفريق">غانـــا</td>
+      <td class="لعب">1</td>
+      <td class="فرق أهداف">-2</td>
+      <td class="النقاط">0</td>
+    </tr>
+  </table>
+
+  </div>
+
+  <div id="fromYallaKora" style="display: none"></div>
+
+<script>
+var yallaWebPage = '';
+var lol = ['lol'];
+fetch(`https://api.allorigins.win/get?url=${encodeURIComponent('https://www.yallakora.com/world-cup/2767/Group-Standing/%D8%AA%D8%B1%D8%AA%D9%8A%D8%A8-%D8%A7%D9%84%D9%85%D8%AC%D9%85%D9%88%D8%B9%D8%A7%D8%AA-%D9%83%D8%A3%D8%B3-%D8%A7%D9%84%D8%B9%D8%A7%D9%84%D9%85#wc-menu')}`)
+                    .then(response => {
+                      if (response.ok) return response.json()
+                      throw new Error('Network response was not ok.')
+                    })
+                    //.then(data => getYallaKora(data.contents));
+                    .then(function(data) {
+                      yallaWebPage = data.contents;
+                      getYallaKora(yallaWebPage);
+                      console.log(yallaWebPage);
+                    });
+
+
+function getYallaKora(yPage) {
+  ////<section class="groupTabs GroupStanding
+  ////<section class="tourMatches next">
+  let newYpage = yPage.substring(yPage.indexOf('<section class="groupTabs GroupStanding'), yPage.indexOf('<section class="tourMatches next">'));
+  document.getElementById('fromYallaKora').innerHTML = newYpage;
+}
+
+
+/*
+function wait(ms){
+   var start = new Date().getTime();
+   var end = start;
+   while(end < start + ms) {
+     end = new Date().getTime();
+  }
+}
+*/
+
+let teamScore, groupScore, teamsSelected, names;
+names = ['goda', 'kim', 'amro'];
+teamsSelected = [['هولندا', 'السنغال', 'إنجلترا', 'أمريكا', 'السعودية', 'الأرجنتين', 'فرنسا', 'الدنمارك', 
+'إسبانيا', 'ألمانيا', 'بلجيكا', 'كرواتيا', 'البرازيل', 'الكاميرون', 'البرتغال', 'أوروجواي'], 
+['هولندا', 'السنغال', 'إنجلترا', 'ويلز', 'المكسيك', 'الأرجنتين', 'فرنسا', 'الدنمارك', 
+'إسبانيا', 'ألمانيا', 'بلجيكا', 'كرواتيا', 'البرازيل', 'سويسرا', 'البرتغال', 'أوروجواي'], 
+['هولندا', 'السنغال', 'إنجلترا', 'إيران', 'بولندا', 'الأرجنتين', 'فرنسا', 'الدنمارك', 
+'إسبانيا', 'ألمانيا', 'بلجيكا', 'المغرب', 'البرازيل', 'الكاميرون', 'البرتغال', 'كوريا الجنوبية']];
+function setScore(playerName){
+  teamScore = 0;
+  groupScore = 0;
+  const groups = document.getElementsByClassName("groups");
+  for (i = 0; i < groups.length; i++) {
+    var teams = groups[i].getElementsByClassName("الفريق");
+    for (j = 0; j < 2; j++) {
+      if (teamsSelected[names.indexOf(playerName)].includes(teams[j].innerHTML)) {
+        teamScore ++;
+        groupScore += 0.5;
+      }
+    }
+    if (groupScore % 1 !== 0 ) {
+        groupScore -= 0.5;
+    }
+  }
+  document.getElementById(playerName).childNodes[0].innerHTML = `${teamScore}/${groupScore}`;
+}
+
+setScore('goda')
+setScore('kim')
+setScore('amro')
+
+function selectTab(evt, myName) {
+  var i, x, tablinks, teams;
+  tablinks = document.getElementsByClassName("w3-block");
+  for (i = 0; i < 3; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" selected", "");
+  }
+  evt.currentTarget.className += " selected";
+  teams = document.getElementsByClassName("الفريق");
+  for (i = 0; i < teams.length; i++) {
+    teams[i].parentElement.className = '';
+    if (teamsSelected[names.indexOf(myName)].includes(teams[i].innerHTML)) {
+      teams[i].parentElement.className += "playerSelection";
+    }
+  }
+}
+</script>
+</body>
+</html>
