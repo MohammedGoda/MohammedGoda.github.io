@@ -75,19 +75,13 @@
 </head>
 <body>
 <script>
-
-
-
-
 </script>
   <div id="myHeader" class="w3-bar" style="background-color: #4d0922;">
     <button id="goda" class="w3-button w3-block" onclick="selectTab(event,'goda')"><span class="score">16/8</span> جودة</button>
     <button id="kim" class="w3-button w3-block" onclick="selectTab(event,'kim')"><span class="score">16/8</span> كريم</button>
     <button id="amro" class="w3-button w3-block" onclick="selectTab(event,'amro')"><span class="score">16/8</span> عمرو</button>
   </div>
-
   <div id="tables">
-
   <table class="groups">
     <h4>المجموعة A</h4>
     <tr>
@@ -202,7 +196,6 @@
       <td class="النقاط">0</td>
     </tr>
   </table>
-
   <table class="groups">
     <h4>المجموعة D</h4>
     <tr>
@@ -393,11 +386,8 @@
       <td class="النقاط">0</td>
     </tr>
   </table>
-
   </div>
-
   <div id="fromYallaKora" style="display: none"></div>
-
 <script>
 var yallaWebPage = '';
 var lol = ['lol'];
@@ -410,7 +400,8 @@ fetch(`https://api.allorigins.win/get?url=${encodeURIComponent('https://www.yall
                     .then(function(data) {
                       yallaWebPage = data.contents;
                       getYallaKora(yallaWebPage);
-                      console.log(yallaWebPage);
+                      //console.log(yallaWebPage);
+                      processDataFromYallaKora();
                     });
 
 
@@ -420,6 +411,32 @@ function getYallaKora(yPage) {
   let newYpage = yPage.substring(yPage.indexOf('<section class="groupTabs GroupStanding'), yPage.indexOf('<section class="tourMatches next">'));
   document.getElementById('fromYallaKora').innerHTML = newYpage;
 }
+
+function processDataFromYallaKora() {
+  var tablesYK, rowsYK, divsYK, teamYK, matchP, matchW, matchD, matchL, goalsIn, goalsOut, goalDiff, points;
+  tablesYK = document.getElementsByClassName("table");
+  for (let i = 0; i < 8; i++) {
+    rowsYK = tablesYK[i].getElementsByClassName('wRow');
+    for (let j = 0; j < 4; j++) {
+      //getElementsByTagName('div').innerhtml;
+      divsYK = rowsYK[j].getElementsByTagName('div');
+      //console.log(divsYK);
+      teamYK = divsYK[1].getElementsByTagName('p')[0].innerHTML;
+      //console.log(teamYK);
+      //teamYK = divsYK[1].innerHTML;
+      matchP = divsYK[2].innerHTML;
+      matchW = divsYK[3].innerHTML;
+      matchD = divsYK[4].innerHTML;
+      matchL = divsYK[5].innerHTML;
+      goalsIn = divsYK[6].innerHTML;
+      goalsOut = divsYK[7].innerHTML;
+      goalDiff = divsYK[8].innerHTML;
+      points = divsYK[9].innerHTML;
+      console.log([teamYK, matchP, matchW, matchD, matchL, goalsIn, goalsOut, goalDiff, points]);
+    }
+  }
+}
+
 
 
 /*
@@ -452,17 +469,13 @@ function setScore(playerName){
         groupScore += 0.5;
       }
     }
-    if (groupScore % 1 !== 0 ) {
-        groupScore -= 0.5;
-    }
+    if (groupScore % 1 !== 0 ) { groupScore -= 0.5; }
   }
   document.getElementById(playerName).childNodes[0].innerHTML = `${teamScore}/${groupScore}`;
 }
-
-setScore('goda')
-setScore('kim')
-setScore('amro')
-
+setScore('goda');
+setScore('kim');
+setScore('amro');
 function selectTab(evt, myName) {
   var i, x, tablinks, teams;
   tablinks = document.getElementsByClassName("w3-block");
