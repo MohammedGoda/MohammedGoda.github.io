@@ -24,7 +24,7 @@
     #myHeader {
       font-size: 28pt;
       position: fixed;
-      width: 85%;
+      width: 100%;
       display: flex;
       border-radius: 5px;
       color: #fabd0b;
@@ -57,12 +57,16 @@
       font-weight: bolder;
       padding-top: 30px;
     }
-    .w3-button {
+    button {
       background-color: #42071e;
+      border-color: #fabd0b;
+      text-align: center;
     }
-    .w3-button.selected {
+    button:hover {
       background-color: #11c9b79a;
-      color: black;
+    }
+    button.selected {
+      background-color: #11c9b79a;
     }
     .score {
       font-size: 20pt;
@@ -72,11 +76,16 @@
       color: #fabd0b;
     }
     tr.playerSelection {
-      background-color: #11c9b751;
+      background-color: #11c9b765;
     }
     td.النقاط {
       font-weight: bolder;
       color: #fabd0b;
+    }
+    .w3-block {
+      height: 70px;
+      text-align: center;
+      padding-bottom: 20px;
     }
     </style>
 </head>
@@ -84,9 +93,9 @@
 <script>
 </script>
   <div id="myHeader" class="w3-bar" style="background-color: #4d0922; visibility: hidden;">
-    <button id="goda" class="w3-button w3-block" onclick="selectTab(event,'goda')"><span class="score">16/8</span> جودة</button>
-    <button id="kim" class="w3-button w3-block" onclick="selectTab(event,'kim')"><span class="score">16/8</span> كريم</button>
-    <button id="amro" class="w3-button w3-block" onclick="selectTab(event,'amro')"><span class="score">16/8</span> عمرو</button>
+    <button id="goda" class="w3-block" onclick="selectTab(event,'goda')"><span class="score">16/8</span> جودة</button>
+    <button id="kim" class="w3-block" onclick="selectTab(event,'kim')"><span class="score">16/8</span> كريم</button>
+    <button id="amro" class="w3-block" onclick="selectTab(event,'amro')"><span class="score">16/8</span> عمرو</button>
   </div>
   <div id="tables">
   <table class="groups">
